@@ -4,4 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AmbdRepository extends
         JpaRepository<AmbdEntity, Long> {
+    AmbdEntity findByNameAndAuthor(String name, String author);
 }
