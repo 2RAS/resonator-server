@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resonator-user-deployment
+  labels:
+    app: resonator-user
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: resonator-user
+  template:
+    metadata:
+      labels:
+        app: resonator-user
+    spec:
+      containers:
+      - name: resonator-user
+        image: pavel98volk/resonator:user
+        ports:
+        - containerPort: 8200
